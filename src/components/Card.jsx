@@ -8,7 +8,7 @@ export default function Card() {
         style={styles.user}
       />
       <View>
-        <Text style={{ color: "#fff" }}>User</Text>
+        <Text style={{ color: "#ffffff" }}>User</Text>
         <TextInput style={styles.email} value="EMAIL: lucas@gmail.com" />
       </View>
     </View>
@@ -18,11 +18,14 @@ export default function Card() {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    backgroundColor: "#424242",
+    backgroundColor: "#808080",
     width: "90%",
     height: 140,
     marginBottom: 16,
     alignItems: "center",
+    borderRadius: 15,
+    borderWidth: 3,
+    borderColor: "#000"
   },
   user: {
     width: 70,
@@ -31,6 +34,6 @@ const styles = StyleSheet.create({
     borderRadius: 35,
   },
   email: {
-    color: "#fff"
+    color: "#ffffff"
   }
 });
