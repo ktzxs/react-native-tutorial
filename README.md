@@ -9,6 +9,12 @@
 7 - Oque é o expo? É o framework usado desenvolver mobile;
 8- Como estilizar um componente no react native? importa o stylesheet e usa a funcao create para aplicar as caracteristicas;
 9- O estilo no React Native é igual ao CSS? Tenho todas as propriedades? Não é igual, e pode sim usar todas as propriedades;
+10-Em quais pacotes encontro um componente de Imagem? Qual melhor para usarmos atualmente? react native e expo-image. O melhor é expo-image.
+11-O que são propriedades de componente? são caracteristicas para reutilizarmos naquele componente 
+
+Extra:
+- Revisao de variaveis e objetos
+    -desestruturação de objetos
 
 ## Comandos Uteis
 

@@ -1,12 +1,10 @@
 import {View, Image, Text, StyleSheet} from 'react-native';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 export default function Header() {
     return (
         <View style={styles.container}>
-            <Image 
-                source={require('../../assets/logo.png')}
-                style={styles.logotipo}
-            />
+                <FontAwesome name="user-circle" size={40} color="black" />
             <Text style={styles.logoText}> Ktzx-User</Text>
         </View>
     )

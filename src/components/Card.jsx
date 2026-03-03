@@ -1,15 +1,15 @@
 import { View, Image, Text, TextInput, StyleSheet } from 'react-native';
 
-export default function Card() {
+export default function Card({avatar, name, email}) {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../assets/user.png')}
+        source={avatar}
         style={styles.user}
       />
       <View>
-        <Text style={{ color: "#ffffff" }}>User</Text>
-        <TextInput style={styles.email} value="EMAIL: lucas@gmail.com" />
+        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.email}>{email}</Text>
       </View>
     </View>
   );
@@ -32,8 +32,13 @@ const styles = StyleSheet.create({
     height: 70,
     marginHorizontal: 30,
     borderRadius: 35,
+    borderWidth: 3,
+    borderColor: "#000000"
   },
   email: {
     color: "#ffffff"
+  },
+  name: {
+    color: "#fff"
   }
 });
