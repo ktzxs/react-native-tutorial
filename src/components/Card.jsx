@@ -1,15 +1,16 @@
 import { View, Image, Text, TextInput, StyleSheet } from 'react-native';
 
-export default function Card({avatar, name, email}) {
+export default function Card({image, name, price, category}) {
   return (
     <View style={styles.container}>
       <Image
-        source={avatar}
-        style={styles.user}
+        source={image}
+        style={styles.image}
       />
       <View>
         <Text style={styles.name}>{name}</Text>
-        <Text style={styles.email}>{email}</Text>
+        <Text style={styles.category}>{category}</Text>
+        <Text style={styles.price}>{price}</Text>
       </View>
     </View>
   );
@@ -17,28 +18,33 @@ export default function Card({avatar, name, email}) {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    backgroundColor: "#808080",
-    width: "90%",
-    height: 140,
+    flexDirection: "column",
+    backgroundColor: "#26a8c9",
+    width: "48%",
+    height: 280,
     marginBottom: 16,
     alignItems: "center",
     borderRadius: 15,
     borderWidth: 3,
-    borderColor: "#000"
+    borderColor: "#00ffdd"
   },
-  user: {
-    width: 70,
-    height: 70,
+  image: {
+    width: 110,
+    height: 140,
+    marginTop: 16,
     marginHorizontal: 30,
-    borderRadius: 35,
+    borderRadius: 10,
     borderWidth: 3,
-    borderColor: "#000000"
+    borderColor: "#ffffff"
   },
-  email: {
+  price: {
     color: "#ffffff"
   },
   name: {
+    color: "#fff",
+    marginTop: 50,
+  },
+  category: {
     color: "#fff"
   }
 });

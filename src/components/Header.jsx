@@ -1,11 +1,11 @@
 import {View, Image, Text, StyleSheet} from 'react-native';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 export default function Header() {
     return (
         <View style={styles.container}>
-                <FontAwesome name="user-circle" size={40} color="black" />
-            <Text style={styles.logoText}> Ktzx-User</Text>
+                <AntDesign name="shopping-cart" size={50} color="white" />
+            <Text style={styles.logoText}>Ktzx-Shopping</Text>
         </View>
     )
 }
@@ -13,11 +13,12 @@ export default function Header() {
 const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
-        backgroundColor: "#616161",
+        backgroundColor: "#26a8c9",
         width: "100%",
         height: 140,
         marginBottom: 16,
         alignItems: "center",
+        justifyContent: 'center',
         
     },
     logotipo: {
@@ -29,6 +30,7 @@ const styles = StyleSheet.create({
     logoText: {
         color: "#fff",
         fontSize: 16,
-        fontWeight: "Bold"
+        fontWeight: "Bold",
+        marginLeft: 10,
     }
 })
