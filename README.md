@@ -10,7 +10,8 @@
 8- Como estilizar um componente no react native? importa o stylesheet e usa a funcao create para aplicar as caracteristicas;
 9- O estilo no React Native é igual ao CSS? Tenho todas as propriedades? Não é igual, e pode sim usar todas as propriedades;
 10-Em quais pacotes encontro um componente de Imagem? Qual melhor para usarmos atualmente? react native e expo-image. O melhor é expo-image.
-11-O que são propriedades de componente? são caracteristicas para reutilizarmos naquele componente 
+11-O que são propriedades de componente? são caracteristicas para reutilizarmos naquele componente;
+12 O que são Hooks? São funcoes especias do react, useState e useEffect fazem parte do core, mas pode ser encontrados em outras bibliotecas, todos os hook comecam com a palavra use, e só podem ser usados no topLevel
 
 Extra:
 - Revisao de variaveis e objetos
