@@ -1,15 +1,29 @@
-import { View, Text, StyleSheet, Button } from 'react-native';
-import { TextInput } from 'react-native-web';
+import { View, Text, StyleSheet, Button, TextInput } from 'react-native';
 import { useState } from 'react'
 
 export default function FormSignUp() {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+  const [pass, setPass] = useState("");
+  const [avatar, setAvatar] = useState("");
 
-  const handSubmit = () => {
-    console.log({name, email, senha})
+  const handleSubmit = async () => {
+    console.log({name, email, pass, avatar})
+    const response = await fetch("http://localhost:3000/user", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({name, email, pass, avatar})
+    })
+    if (response.ok) {
+      console.log('Usuario cadastrado com sucesso!');
+      const data = await response.json()
+      console.log(data)
+    } else {
+      console.log('Erro ao cadastrar usuário')
+    }
   }
 
   return (
@@ -30,12 +44,18 @@ export default function FormSignUp() {
             />
             <TextInput 
               style={styles.inputs}
-              placeholder="senha" 
+              placeholder="pass" 
               secureTextEntry 
-               value={senha}
-              onChangeText={setSenha}
+               value={pass}
+              onChangeText={setPass}
             />
-            <Button title="Cadastrar" onPress={handSubmit} />
+            <TextInput 
+              style={styles.inputs}
+              placeholder="Avatar"
+              value={avatar}
+              onChangeText={setAvatar}
+            />
+            <Button title="Cadastrar" onPress={handleSubmit} />
         </View>
     </View>
   );
