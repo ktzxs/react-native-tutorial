@@ -14,6 +14,7 @@
 12-O que são Hooks? São funcoes especias do react, useState e useEffect fazem parte do core, mas pode ser encontrados em outras bibliotecas, todos os hook comecam com a palavra use, e só podem ser usados no topLevel;
 13-Para que serve e como funciona o useState? Para atualizar o componente
 14- Para que serve e como funciona o useEffect? funciona como um gatilho quando o componente roda pela primeira vez e quando alguma coisa foi alterado no componente e dispara uma funcao programada.
+15-O que é Prop Drilling? Quando pegamos o props do componente pai, mandamos para o filho, atualizamos o props no filho e mandamos pro pai.
 
 
 Extra:

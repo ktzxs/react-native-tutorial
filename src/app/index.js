@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text } from 'react-native';
-import Header from './components/Header';
-import Card from './components/Card';
+import Header from '../components/Header';
 import { useEffect, useState } from 'react';
+import CardUser from '../components/CardUser';
 
 export default function App() {
 
@@ -28,12 +28,16 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Header />
+
       {isLoading ? <Text>carregando</Text> : users.map((user) => (
-        <Card 
+        <CardUser
           key={user.id}
+          id={user.id}
           avatar={user.avatar}
           name={user.name}
           email={user.email}
+          users={users}
+          setUsers={setUsers}
         />
       ))}
       <StatusBar style='auto' />

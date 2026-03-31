@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Header from './components/Header';
-import Card from './components/Card';
-import FormSignUp from './components/FormSignUp';
+import Header from '../components/Header';
+import Card from '../components/Card';
+import FormSignUp from '../components/FormSignUp';
 
-export default function App() {
+export default function SingUp() {
   return (
     <View style={styles.container}>
       <Header />

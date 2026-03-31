@@ -10,7 +10,11 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ffffff",
+    "scheme": "react-native-tutorial",
+    "experiments": {
+      "typedRoutes": true
+    }
     },
     "ios": {
       "supportsTablet": true
@@ -23,7 +27,11 @@
       "edgeToEdgeEnabled": true
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
