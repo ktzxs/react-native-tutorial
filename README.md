@@ -3,19 +3,19 @@
 1 - Qual a linguagem de programação utilizada na disciplina? JavaScript;
 2 - O que é o Node.js? É o ambiente que roda o JS no terminal;
 3 - O que é um framework e qual a diferença para uma biblioteca? Freamework é um conjunto de recursos programados para resolver problemas "Ele fala como estruturar seu código ou opina como resolver um problema". Biblioteca, não opina como resolver o problema, é um conjunto de funções. 
-4 - O que é npm? Node package Manager - Comando que gerencia o node;
+4 - O que é npm? Node package Manager - Comando que gerencia o node, adicionar pacotes, remover e rodar scripts;
 5 - O que é React? Biblioteca;
 6 - O que é o React Native? Biblioteca usada para desenvolver mobile;
 7 - Oque é o expo? É o framework usado desenvolver mobile;
+- Qual a diferença entre as libs react, react-native, react-dom e expo?
 8- Como estilizar um componente no react native? importa o stylesheet e usa a funcao create para aplicar as caracteristicas;
 9- O estilo no React Native é igual ao CSS? Tenho todas as propriedades? Não é igual, e pode sim usar todas as propriedades;
 10-Em quais pacotes encontro um componente de Imagem? Qual melhor para usarmos atualmente? react native e expo-image. O melhor é expo-image.
-11-O que são propriedades de componente? são caracteristicas para reutilizarmos naquele componente;
+11-O que são propriedades de componente? são caracteristicas para modificar naquele componente, no momento que chamamos ele;
 12-O que são Hooks? São funcoes especias do react, useState e useEffect fazem parte do core, mas pode ser encontrados em outras bibliotecas, todos os hook comecam com a palavra use, e só podem ser usados no topLevel;
-13-Para que serve e como funciona o useState? Para atualizar o componente
-14- Para que serve e como funciona o useEffect? funciona como um gatilho quando o componente roda pela primeira vez e quando alguma coisa foi alterado no componente e dispara uma funcao programada.
-15-O que é Prop Drilling? Quando pegamos o props do componente pai, mandamos para o filho, atualizamos o props no filho e mandamos pro pai.
-
+13-Para que serve e como funciona o useState?cria um estado e funcoes que alteram o estado, sempre que alteram o estado o react recarrega o valor na tela, Para atualizar o componente.
+14- Para que serve e como funciona o useEffect? funciona como um gatilho quando o componente roda pela primeira vez e quando o estado foi alterado no componente e dispara uma funcao programada.
+15-O que é Prop Drilling? Prop Drilling é o processo de passar propriedades de um componente pai para componentes filhos profundamente aninhados, mesmo que os componentes intermediários não usem esses dados diretamente.
 
 Extra:
 - Revisao de variaveis e objetos
