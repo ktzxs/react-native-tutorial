@@ -1,22 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Header from '../components/Header';
-import Card from '../components/Card';
 import FormSignUp from '../components/FormSignUp';
 
-export default function SingUp() {
+export default function SignUp() {
   return (
-    <View style={styles.container}>
-      <Header />
-      <FormSignUp />
-      <StatusBar style="auto" />
-    </View>
+      <View style={styles.container}>
+        <Header />
+        <FormSignUp />
+        <StatusBar style="auto" />
+      </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#f7f7f7'
   }
 });

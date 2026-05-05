@@ -1,10 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Button } from 'react-native';
+import { useRouter } from 'expo-router';
 
-export default function Contact() {
+export default function Profile() {
+  const router = useRouter();
+
   return (
       <View style={styles.container}>
-        <Text>Contatos</Text>
+        <Text>Perfil</Text>
+        <Button title="Logout" onPress={() => router.push('/')} />
         <StatusBar style="auto" />
       </View>
   );
