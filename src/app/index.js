@@ -1,6 +1,7 @@
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text, Button } from 'react-native';
+import Button from '../components/Button';
 import { useRouter } from 'expo-router';
 
 export default function Login() {

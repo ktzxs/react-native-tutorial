@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, Button, TextInput } from 'react-native';
 import { useState } from 'react'
+import Button from './Button';
 
 export default function FormSignUp() {
 
@@ -55,7 +56,7 @@ export default function FormSignUp() {
               value={avatar}
               onChangeText={setAvatar}
             />
-            <Button title="Cadastrar" onPress={handleSubmit} />
+            <Button onPress={handleSubmit}/>
         </View>
     </View>
   );
