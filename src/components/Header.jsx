@@ -12,7 +12,7 @@ export default function Header(){
     return (
         <View style={styles.container}>
             <View style={styles.logoContainer}>
-                <FontAwesome style={styles.logo} name="users" size={26} color="#e7612b" />
+                <FontAwesome style={styles.logo} name="users" size={26} color="#ffffff" />
                 <Text style={styles.logotipo}>Logo - Users: {users.length}</Text>
             </View>
             <Ionicons name="person-add-outline" size={24} color="white" onPress={() => router.push('/signup')} />
@@ -23,7 +23,7 @@ export default function Header(){
 const styles = StyleSheet.create({ // CSS in JS
     container: {
         flexDirection: "row",
-        backgroundColor: "#000000",
+        backgroundColor: "#4a56ff",
         width: "100%",
         height: 46,
         marginBottom: 16,
