@@ -1,85 +1,84 @@
-import { useState, useEffect } from "react";
-import { StyleSheet, View, Text } from "react-native";
-import { Image } from "expo-image";
-import Feather from '@expo/vector-icons/Feather';
-import EvilIcons from '@expo/vector-icons/EvilIcons';
+import { StyleSheet, View, Text } from "react-native"
+import { Image } from "expo-image"
+import FontAwesome from '@expo/vector-icons/FontAwesome'
+import { useUserStore } from "../stores/userStore"
+import { useRouter } from "expo-router"
 
-export default function CardUser({id, avatar, name, email, users, setUsers }) {
-    
+export default function CardUser({id, avatar, name, email}){
+
+    const { users, setUsers, setUserToEdit } = useUserStore()
+    const router = useRouter()
+
     const handleDelete = async () => {
-      const response = await fetch(`http://localhost:3000/user/${id}`, {
-        method: "Delete"
-      })
-      const data = await response?.json()
-      if(response.ok){
-        console.log('Usuario deletado com sucesso', data)
-        const newUsers = users.filter(user => user.id !== id)
-        setUsers(newUsers)
-      }else{
-        console.log('Erro ao deletar usuário', data)
-      }
-    }  
+        const response = await fetch(`http://localhost:3000/user/${id}`, {
+            method: "DELETE"
+        })
+        const data = await response?.json()
+        if(response.ok){
+            console.log("Usuário deletado com sucesso", data)
+            // atualiza a lista de usuários, removendo o usuário deletado
+            const newUser = users.filter(user => user.id !== id)
+            setUsers(newUser)
+        }else{
+            console.log("Erro ao deletar usuário", data)
+        }
+    }
 
     return (
         <View style={styles.container}>
-            <Image
+            <Image 
                 style={styles.avatar}
-                source={avatar}
+                //source={require("../../assets/adaptive-icon.png")} // Imagem local, pasta assets
+                source={avatar} // Imagem externa, url
             />
             <View style={styles.actions}>
-              <EvilIcons name="pencil" size={19} color="white" />
-              <Feather name="trash" size={18} color="red" style={styles.trash} onPress={handleDelete} />
+                <FontAwesome name="edit" size={19} color="black" onPress={() => {setUserToEdit({ id, avatar, name, email }); router.push("/edit-user")}} />
+                <FontAwesome name="trash-o" size={18} color="black" style={styles.trash} onPress={handleDelete} />
             </View>
-
             <View>
-              <Text style={styles.name}>{name}</Text>
-              <Text style={styles.email}>{email}</Text>
+                <Text style={styles.name}>{name}</Text>
+                <Text style={styles.email}>{email}</Text>
             </View>
         </View>
-    );
+    )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: "column",
-    backgroundColor: "#26a8c9",
-    width: "48%",
-    height: 280,
-    marginBottom: 16,
-    alignItems: "center",
-    borderRadius: 15,
-    borderWidth: 3,
-    borderColor: "#00ffdd"
-  },
-  avatar: {
-    width: 110,
-    height: 140,
-    marginTop: 16,
-    marginHorizontal: 30,
-    borderRadius: 10,
-    borderWidth: 3,
-    borderColor: "#ffffff"
-  },
-  price: {
-    color: "#ffffff"
-  },
-  name: {
-    color: "#fff",
-    marginTop: 50,
-  },
-  category: {
-    color: "#fff"
-  },
-  actions: {
-    position: "absolute",
-    right: 14,
-    top: 14,
-    flexDirection: "row",
-    gap: 14,
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  trash: {
-    marginBottom: 2
-  }
-});
+    container:{
+        borderWidth: 1,
+        borderColor: "#d1d1d1",
+        borderStyle: "solid",
+        borderRadius: 20,
+        flexDirection: "row",
+        padding: 16,
+        gap: 10,
+        marginBottom: 20,
+        width: "80%",
+    },
+    avatar:{
+        backgroundColor: "#d0eaf1",
+        borderRadius: 20, 
+        width: 40,
+        height: 40
+    },
+    name: {
+        fontSize: 16,
+        fontWeight: "700"
+    },
+    email: {
+        fontSize: 14,
+        color: "#505050"
+    },
+    actions: {
+        position: "absolute",
+        right: 14,
+        top: 14,
+        flexDirection: "row",
+        gap: 14,
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    trash: {
+        marginBottom: 1
+    }
+})

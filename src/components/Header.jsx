@@ -1,44 +1,41 @@
-import {View, Text, StyleSheet} from 'react-native';
-import AntDesign from '@expo/vector-icons/AntDesign';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import {View, Text, StyleSheet} from 'react-native'
+import FontAwesome from '@expo/vector-icons/FontAwesome'
+import Ionicons from '@expo/vector-icons/Ionicons'
 import { useRouter } from 'expo-router'
+import { useUserStore } from '../stores/userStore'
 
-export default function Header() {
+export default function Header(){
+
+    const {users} = useUserStore()
     const router = useRouter()
 
     return (
         <View style={styles.container}>
             <View style={styles.logoContainer}>
-                <AntDesign name="shopping-cart" size={50} color="white" />
-                <Text style={styles.logoText}>Ktzx-Shopping</Text>
+                <FontAwesome style={styles.logo} name="users" size={26} color="#e7612b" />
+                <Text style={styles.logotipo}>Logo - Users: {users.length}</Text>
             </View>
-            <Ionicons name="person-add-outline" size={24} color="white" onPress={() => router.push('/singUp')} />
+            <Ionicons name="person-add-outline" size={24} color="white" onPress={() => router.push('/signup')} />
         </View>
     )
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create({ // CSS in JS
     container: {
         flexDirection: "row",
-        backgroundColor: "#26a8c9",
+        backgroundColor: "#000000",
         width: "100%",
-        height: 140,
+        height: 46,
         marginBottom: 16,
         alignItems: "center",
         paddingHorizontal: 16,
         justifyContent: "space-between"
     },
-    logotipo: {
-        width: "70px",
-        height: "70px",
-        marginHorizontal: 30,
-        borderRadius: "100%"
+    logo:{
+        marginRight: 14
     },
-    logoText: {
-        color: "#fff",
-        fontSize: 16,
-        fontWeight: "Bold",
-        marginLeft: 10,
+    logotipo: {
+        color: "#FFF"
     },
     logoContainer: {
         flexDirection: "row",
