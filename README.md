@@ -17,6 +17,22 @@
 14- Para que serve e como funciona o useEffect? funciona como um gatilho quando o componente roda pela primeira vez e quando o estado foi alterado no componente e dispara uma funcao programada.
 15-O que é Prop Drilling? Prop Drilling é o processo de passar propriedades de um componente pai para componentes filhos profundamente aninhados, mesmo que os componentes intermediários não usem esses dados diretamente.
 
+--avaliacao 2 ------
+
+Navegação
+Quais os padrões de navegação do Expo Router vimos em aula?
+    tabs e stack
+
+Quais as características de cada um deles?
+    tabs: navegacao por abas, geralmente na parte inferior. Stack: navegacao em pilhas
+
+Posso utilizar apenas um deles ou ambos ao mesmo tempo no projeto? pode usar os dois
+    
+Zustand (estados globais)
+AsyncStorage (Armazenamento Local)
+Sistema de Login
+FlatList vs ScrollView
+
 Extra:
 - Revisao de variaveis e objetos
     -desestruturação de objetos
