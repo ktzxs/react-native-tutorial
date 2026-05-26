@@ -19,20 +19,46 @@
 
 --avaliacao 2 ------
 
-Navegação
-Quais os padrões de navegação do Expo Router vimos em aula?
-    tabs e stack
+1) Quais os padrões de navegação do Expo Router vimos em aula?
+Os padrões foram Tabs e Stack.
 
-Quais as características de cada um deles?
-    tabs: navegacao por abas, geralmente na parte inferior. Stack: navegacao em pilhas
+2) Quais as características de cada um deles?
+Tabs: mostra abas na parte de baixo da tela e facilita trocar entre páginas principais do app.
+Stack: funciona como uma pilha, abrindo uma tela em cima da outra, com opção de voltar para a anterior.
 
-Posso utilizar apenas um deles ou ambos ao mesmo tempo no projeto? pode usar os dois
-    
+3) Posso utilizar apenas um deles ou ambos ao mesmo tempo no projeto?
+Sim. Dá para usar só um deles ou os dois juntos no mesmo projeto, dependendo da necessidade.
+
+-----------------------------------
+
 Zustand (estados globais)
+
+4) Qual a diferença de usar estados com Zustand e com useState?
+O useState serve para controlar estados dentro de um componente.
+O Zustand é melhor quando vários componentes precisam compartilhar as mesmas informações, porque ele cria um estado global.
+
+-----------------------------------
+
 AsyncStorage (Armazenamento Local)
-Sistema de Login
+
+5) O que é AsyncStorage?
+É um armazenamento local do app. Ele guarda informações no celular, como login, tema ou configurações, mesmo depois de fechar o aplicativo.
+
+Sistema de Login JWT
+
+6) As informações do Payload do JWT para quem possui o token são secretas?
+Não. O payload pode ser lido por quem tiver o token.
+
+7) Quem possui um token JWT (cliente) consegue saber a assinatura ou alterar os dados do token?
+Consegue ver o token e o payload, mas não consegue alterar os dados sem invalidar a assinatura. A assinatura serve justamente para garantir que ele não foi modificado.
+
+-----------------------------------
+
 FlatList vs ScrollView
 
+8) Diferença entre FlatList e ScrollView?
+ScrollView: carrega todos os itens de uma vez, melhor para listas pequenas.
+FlatList: carrega os itens aos poucos, melhor para listas grandes porque é mais leve e rápido.
 Extra:
 - Revisao de variaveis e objetos
     -desestruturação de objetos
