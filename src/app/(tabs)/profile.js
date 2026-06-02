@@ -5,6 +5,7 @@ import Button from '../../components/Button';
 import {useEffect, useState} from 'react'
 import { useAuthStore } from '../../stores/authStore';
 import { Image } from 'expo-image';
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default function Profile() {
  
@@ -16,7 +17,7 @@ export default function Profile() {
 
   useEffect(() => {
     const getUser = async () => {
-      const response = await fetch(`http://localhost:3000/user/${user.id}`, {
+      const response = await fetch(`http://localhost:3333/user/${user.id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -34,8 +35,9 @@ export default function Profile() {
     getUser()
   }, [])
 
-  const handleLogout = () => {
+  const handleLogout = async() => {
     logout()
+    await AsyncStorage.removeItem("userLogged")
     router.replace("/")
   }
 
