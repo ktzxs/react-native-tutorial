@@ -20,45 +20,61 @@
 --avaliacao 2 ------
 
 1) Quais os padrões de navegação do Expo Router vimos em aula?
-Os padrões foram Tabs e Stack.
+
+Os padrões de navegação vistos foram Tabs e Stack.
 
 2) Quais as características de cada um deles?
-Tabs: mostra abas na parte de baixo da tela e facilita trocar entre páginas principais do app.
-Stack: funciona como uma pilha, abrindo uma tela em cima da outra, com opção de voltar para a anterior.
+
+Tabs: exibe abas de navegação, geralmente na parte inferior da tela, permitindo alternar rapidamente entre as principais páginas do aplicativo.
+
+Stack: funciona como uma pilha de telas. Quando o usuário navega para uma nova página, ela é colocada sobre a anterior, permitindo voltar para a tela anterior.
 
 3) Posso utilizar apenas um deles ou ambos ao mesmo tempo no projeto?
-Sim. Dá para usar só um deles ou os dois juntos no mesmo projeto, dependendo da necessidade.
 
------------------------------------
+Sim. É possível utilizar apenas Tabs, apenas Stack ou combinar os dois no mesmo projeto, de acordo com a necessidade da aplicação.
 
-Zustand (estados globais)
+Zustand (Estados Globais)
 
 4) Qual a diferença de usar estados com Zustand e com useState?
-O useState serve para controlar estados dentro de um componente.
-O Zustand é melhor quando vários componentes precisam compartilhar as mesmas informações, porque ele cria um estado global.
 
------------------------------------
+O useState é utilizado para controlar estados locais de um componente, ou seja, informações que serão usadas apenas naquele componente.
+
+O Zustand é utilizado para criar estados globais, permitindo que vários componentes compartilhem e acessem os mesmos dados sem a necessidade de passar informações por props.
 
 AsyncStorage (Armazenamento Local)
 
-5) O que é AsyncStorage?
-É um armazenamento local do app. Ele guarda informações no celular, como login, tema ou configurações, mesmo depois de fechar o aplicativo.
+5) Qual a diferença do AsyncStorage para o Zustand ou useState?
+
+O useState armazena dados apenas enquanto o componente está ativo.
+
+O Zustand mantém dados compartilhados entre componentes enquanto o aplicativo está em execução.
+
+O AsyncStorage salva os dados no armazenamento local do dispositivo, permitindo que eles continuem disponíveis mesmo após fechar ou reiniciar o aplicativo.
+
+6) Qual formato de valor o AsyncStorage aceita?
+
+O AsyncStorage aceita apenas valores do tipo string. Para armazenar objetos ou arrays, é necessário convertê-los para string utilizando JSON.stringify() e, ao recuperar os dados, utilizar JSON.parse().
 
 Sistema de Login JWT
 
-6) As informações do Payload do JWT para quem possui o token são secretas?
-Não. O payload pode ser lido por quem tiver o token.
+7) As informações do Payload do JWT para quem possui o token são secretas?
 
-7) Quem possui um token JWT (cliente) consegue saber a assinatura ou alterar os dados do token?
-Consegue ver o token e o payload, mas não consegue alterar os dados sem invalidar a assinatura. A assinatura serve justamente para garantir que ele não foi modificado.
+Não. As informações do Payload podem ser visualizadas por qualquer pessoa que possua o token, pois elas são apenas codificadas em Base64 e não criptografadas.
 
------------------------------------
+8) Quem possui um token JWT (cliente) consegue saber a assinatura ou alterar os dados do token?
+
+O cliente consegue visualizar o Header, o Payload e a assinatura do token. Porém, não consegue alterar os dados e gerar uma assinatura válida sem possuir a chave secreta do servidor. Caso os dados sejam modificados, a assinatura se torna inválida e o token é rejeitado pelo sistema.
 
 FlatList vs ScrollView
 
-8) Diferença entre FlatList e ScrollView?
-ScrollView: carrega todos os itens de uma vez, melhor para listas pequenas.
-FlatList: carrega os itens aos poucos, melhor para listas grandes porque é mais leve e rápido.
+9) Qual a diferença entre uma View, ScrollView e FlatList?
+
+View: é um contêiner básico utilizado para organizar e agrupar componentes na tela. Não possui rolagem.
+
+ScrollView: permite rolagem do conteúdo, mas renderiza todos os itens de uma só vez, sendo mais indicada para pequenas quantidades de dados.
+
+FlatList: também permite rolagem, porém renderiza apenas os itens visíveis na tela, tornando-se mais eficiente e recomendada para listas grandes.
+
 Extra:
 - Revisao de variaveis e objetos
     -desestruturação de objetos
